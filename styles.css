@@ -46,7 +46,6 @@ body {
   main::before {
     content: '';
     background-image: url('./images/baloons.png');
-    background-size: 40vw 145px;
     background-repeat: no-repeat;
     display: block;
     height: 145px;
@@ -68,7 +67,6 @@ body {
 @media (max-width: 820px) {
   main::after, 
   main::before {
-    background-size: 55vw 150px;
     height: 150px;
     width: 55vw;
   }
