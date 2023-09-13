@@ -302,6 +302,14 @@ body {
 
 .citd {
   margin: 60px 0;
+  padding: 60px 0;
+  color: #fff;
+  background-color: #000;
+}
+
+.citd a {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .citd .container {
@@ -312,10 +320,6 @@ body {
 
 .citd .text {
   text-align: justify;
-}
-
-.citd img {
-  filter: brightness(0);
 }
 
 .citd span {
