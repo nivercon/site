@@ -34,20 +34,75 @@
             Prepare-se para uma imersão total no mundo open source!
           </p>
         </section>
+        <div class="tabs__container">
+          <h3>Confira a programação</h3>
+          <button class="day__one active" onclick="openDay()">dia 6</button>
+          <button class="day__two" onclick="openDay()">dia 7</button>
+        </div>
       </div>
       <section class="schedule">
-        <div class="save__date">
-          <div class="save__date__bg"></div>
-        </div>
         <div class="container">
-          <div class="schedule__container">
-            <h3>Confira a programação</h3>
-            <div class="tabs__container">
-              <button class="day__one active">dia 6</button>
-              <button class="day__two inactive">dia 7</button>
-            </div>
-            <p style="margin-bottom: 24px">Em breve!</p>
-            <p>Fique atento às nossas redes sociais para mais informações</p>
+          <div class="details__container details__day-one details__active">
+            <section class="tabs__schedule">
+              <p class="tabs__hour">19:30</p>
+              <div class="tabs__details">
+                <p class="tabs__content">Abertura e Inicio das Mentorias</p>
+              </div>
+            </section>
+            <section class="tabs__schedule">
+              <p class="tabs__hour">22:00</p>
+              <div class="tabs__details">
+                <p class="tabs__content">Code in the Dark</p>
+              </div>
+            </section>
+          </div>
+          <div class="details__container details__day-two">
+            <section class="tabs__schedule">
+              <p class="tabs__hour">08:30</p>
+              <div class="tabs__details">
+                <p class="tabs__content">Abertura</p>
+              </div>
+            </section>
+            <section class="tabs__schedule">
+              <p class="tabs__hour">09:00</p>
+              <div class="tabs__details">
+                <p class="tabs__content"></p>
+                <p class="tabs__info"></p>
+              </div>
+            </section>
+            <section class="tabs__schedule">
+              <p class="tabs__hour">09:30</p>
+              <div class="tabs__details">
+                <p class="tabs__content">Como comecei a contribuir com o grammY e como isso impactou minha vida</p>
+                <p class="tabs__info">Rogério Munhoz - BackEnd</p>
+              </div>
+            </section>
+            <section class="tabs__schedule">
+              <p class="tabs__hour">10:00</p>
+              <div class="tabs__details">
+                <p class="tabs__content">Break</p>
+              </div>
+            </section>
+            <section class="tabs__schedule">
+              <p class="tabs__hour">11:00</p>
+              <div class="tabs__details">
+                <p class="tabs__content">Usando Python e dados para desenvolver dashboards, interfaces e aplicações</p>
+                <p class="tabs__info"> Italo Epifânio</p>
+              </div>
+            </section>
+            <section class="tabs__schedule">
+              <p class="tabs__hour">11:30</p>
+              <div class="tabs__details">
+                <p class="tabs__content">Nextflow: A solução open source para ciência e engenharia de dados</p>
+                <p class="tabs__info"> Marcel Ribeiro-Dantas - Developer Advocate</p>
+              </div>
+            </section>
+            <section class="tabs__schedule">
+              <p class="tabs__hour">12:00</p>
+              <div class="tabs__details">
+                <p class="tabs__content">Encerramento</p>
+              </div>
+            </section>
           </div>
         </div>
       </section>
@@ -103,4 +158,23 @@
       </footer>
     </div>
   </body>
+
+  <script type="text/javascript">
+    const openDay = () => {
+      let tabs = document.querySelectorAll(".tabs__container button");
+      let tabContents = document.querySelectorAll(".details__container");
+        tabs.forEach((tab, index) => {
+          tab.addEventListener("click", () => {
+            tabContents.forEach((content) => {
+              content.classList.remove("details__active");
+            });
+            tabs.forEach((tab) => {
+              tab.classList.remove("active");
+            });
+            tabContents[index].classList.add("details__active");
+            tabs[index].classList.add("active");
+          });
+        });
+      }
+  </script>
 </html>
