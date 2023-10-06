@@ -52,7 +52,7 @@
     function fetchGitHubPulls() {
       const apiUrl = 'https://api.nivercon.com/github/pulls';
 
-      return fetch(apiUrl, {mode: 'no-cors'})
+      return fetch(apiUrl)
         .then((response) => {
           console.log('1')
           if (!response.ok) {
