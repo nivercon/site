@@ -523,3 +523,43 @@ footer .right {
     text-align: center;
   }
 }
+
+.hackaton__landing {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+}
+
+.hackaton__landing img {
+  width: 25%;
+}
+
+.hackaton__text {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+}
+
+.hackaton__text h1 {
+  font-size: 24px;
+}
+
+.hackaton__text h2 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.hackaton__text span {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.hackaton__text p {
+  font-size: 12px;
+}
