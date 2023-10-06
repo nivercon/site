@@ -47,5 +47,34 @@
         </section>
       </div>
     </main>
-  </body
+  </body>
+  <script type="text/javascript">
+    function fetchGitHubPulls() {
+      const apiUrl = 'https://api.nivercon.com/github/pulls';
+
+      return fetch(apiUrl, {mode: 'no-cors'})
+        .then((response) => {
+          console.log('1')
+          if (!response.ok) {
+            console.log('2')
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log('3')
+          return data; // You can process the data here as needed
+        })
+        .catch((error) => {
+          console.log('4')
+          console.error('Error fetching data:', error);
+        });
+    }
+
+    fetchGitHubPulls()
+      .then((data) => {
+        console.log('5')
+        console.log('GitHub Pull Requests:', data);
+    });
+  </script>
 </html>
