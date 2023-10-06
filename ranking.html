@@ -64,14 +64,14 @@
           const order = data.sort((a, b) => parseFloat(b.pulls) - parseFloat(a.pulls));
           const mappedUsers = order.map((user, index) => {
             return `
-                  <li class="ranking__list">
-                    <img src=${user.avatar}/>
-                    <p>${user.username}</p>
-                    <p>${user.pulls}</p>
-                  </li>
+              <li class="ranking__list">
+                <img src=${user.avatar}/>
+                <p>${user.username}</p>
+                <p>${user.pulls}</p>
+              </li>
             `
           })
-          pullRequestList.innerHTML = mappedUsers;
+          pullRequestList.innerHTML = mappedUsers.join('');
         })
         .catch((error) => {
           console.error('Error fetching data:', error);

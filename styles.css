@@ -589,6 +589,7 @@ footer .right {
   border: 1px solid;
   border-radius: 25px;
   width: 700px;
+  margin-bottom: 16px;
 }
 
 @media (max-width: 420px) {
