@@ -538,6 +538,16 @@ footer .right {
   width: 25%;
 }
 
+@media (max-width: 420px) {
+  .hackaton__landing {
+    flex-wrap: wrap;
+  }
+
+  .hackaton__landing img {
+    width: 70%;
+  }
+}
+
 .hackaton__text {
   max-width: 720px;
   display: flex;
@@ -562,4 +572,31 @@ footer .right {
 
 .hackaton__text p {
   font-size: 12px;
+}
+
+#pulls__container {
+  padding-bottom: 200px;
+  display:flex;
+  justify-content: center;
+}
+
+.ranking__list {
+  display: flex;
+  justify-content: space-evenly;
+  height: 70px;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 25px;
+  width: 700px;
+}
+
+@media (max-width: 420px) {
+  .ranking__list {
+    width: calc(100vw - 20px);
+
+  }
+}
+
+.ranking__list img {
+  height: 50px;
 }

@@ -37,13 +37,12 @@
             <h1>Agora você está colaborando com a Nivercon!</h1>
             <h2>Contribua com no mínimo dois pull requests válidos* em repositórios que estão aceitando contribuição com as tags <span>#hacktoberfest #hackotberfest-accept #nivercon-accept</span></h2>
             <p>* os pull request serão aceitos como pré aprovados até serem validados manualmente pelos Mentores.</p>
-            <a href="#pulls" class="button__cta">Ver Ranking</a>
+            <a href="#pulls__container" class="button__cta">Ver Ranking</a>
           </div>
         </section>  
-        <section id="pulls">
-          <div class="pullRequestList">
-
-          </div>
+        <section id="pulls__container">
+          <ul class="ranking__card">
+          </ul>
         </section>
       </div>
     </main>
@@ -54,27 +53,29 @@
 
       return fetch(apiUrl)
         .then((response) => {
-          console.log('1')
           if (!response.ok) {
-            console.log('2')
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
           return response.json();
         })
         .then((data) => {
-          console.log('3')
-          return data; // You can process the data here as needed
+          const pullRequestList = document.querySelector('.ranking__card');
+          const order = data.sort((a, b) => parseFloat(b.pulls) - parseFloat(a.pulls));
+          const mappedUsers = order.map((user, index) => {
+            return `
+                  <li class="ranking__list">
+                    <img src=${user.avatar}/>
+                    <p>${user.username}</p>
+                    <p>${user.pulls}</p>
+                  </li>
+            `
+          })
+          pullRequestList.innerHTML = mappedUsers;
         })
         .catch((error) => {
-          console.log('4')
           console.error('Error fetching data:', error);
         });
     }
-
     fetchGitHubPulls()
-      .then((data) => {
-        console.log('5')
-        console.log('GitHub Pull Requests:', data);
-    });
   </script>
 </html>
