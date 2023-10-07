@@ -42,15 +42,15 @@ body {
   }
 }
 
-@media (min-width: 768px) {
-  main::after, 
+
+@media screen and (min-width: 780px) {
   main::before {
     content: '';
     background-image: url('./images/baloons.png');
     background-repeat: no-repeat;
     display: block;
     height: 145px;
-    width: 40vw;
+    width: 100%;
     position: absolute;
     top: 0;
   }
@@ -59,17 +59,40 @@ body {
     right: 0;
     transform: scaleX(-1);
   }
-  
+
   main::before {
     left:0;
   }
 }
+main::after{
+    content: '';
+    background-image: url('./images/baloons.png');
+    background-repeat: no-repeat;
+    display: block;
+    height: 145px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
 
-@media (max-width: 820px) {
-  main::after, 
+  main::after{
+    right: 0;
+    transform: scaleX(-1);
+  }
+
   main::before {
-    height: 150px;
-    width: 55vw;
+    left:0;
+  }
+
+@media (max-width: 1200px) {
+  main::before,
+  main::after {
+    width: 50vw;
+  }
+}
+@media screen and (max-width: 776px) {
+  main::after {
+    width: 100vw;
   }
 }
 
@@ -216,16 +239,16 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 42px 0 20px;
+  gap: 2rem;
 }
 
 .about p {
   text-align: justify;
 }
 
-@media (min-width: 460px) {
+@media screen and (min-width: 1260px) {
   .about p{
-    width: 42%;
-    min-width: 300px;
+    max-width: 30rem;
   }
 }
 
@@ -532,11 +555,12 @@ footer .right {
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 40px;
+  gap: 1rem;
+  flex-direction: column;
 }
 
 .hackaton__landing img {
-  width: 25%;
+  width: 10rem;
 }
 
 @media (max-width: 420px) {
@@ -581,6 +605,11 @@ footer .right {
   justify-content: center;
 }
 
+.ranking__card{
+  width: 100%;
+  max-width: 700px;
+}
+
 .ranking__list {
   display: flex;
   justify-content: space-evenly;
@@ -588,7 +617,6 @@ footer .right {
   align-items: center;
   border: 1px solid;
   border-radius: 25px;
-  width: 700px;
   margin-bottom: 16px;
 }
 
