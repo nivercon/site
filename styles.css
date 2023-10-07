@@ -216,16 +216,16 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 42px 0 20px;
+  gap: 2rem;
 }
 
 .about p {
   text-align: justify;
 }
 
-@media (min-width: 460px) {
+@media screen and (min-width: 1260px) {
   .about p{
-    width: 42%;
-    min-width: 300px;
+    max-width: 30rem;
   }
 }
 
