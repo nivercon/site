@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-  width: 80vw;
+  width: 85vw;
   margin: 0 auto;
   max-width: 1280px;
 }
@@ -581,27 +581,6 @@ footer .right {
   justify-content: center;
 }
 
-.ranking__list {
-  display: flex;
-  justify-content: space-evenly;
-  height: 70px;
-  align-items: center;
-  border: 1px solid;
-  border-radius: 25px;
-  width: 700px;
-  margin-bottom: 16px;
-}
-
-@media (max-width: 420px) {
-  .ranking__list {
-    width: calc(100vw - 20px);
-
-  }
-}
-
-.ranking__list img {
-  height: 50px;
-}
 
 .btn{
   font-family: Roboto, sans-serif;
@@ -629,4 +608,40 @@ footer .right {
   background-color: #fff;
   color: #7289da;
   border: solid 3px #7289da;
+}
+.ranking__card{
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(auto, 200px) );
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+.ranking__profile{
+  width: fit-content;
+  flex-direction: column;
+  height: fit-content;
+  background-color: white;
+  border-radius: 5px;
+  padding: 9px;
+  gap: 0.5rem;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 16px;
+  width: 140px;
+}
+.ranking__profile img {
+  width: 100%;
+}
+.ranking__badget{
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 0.2rem 0.4rem;
+  background: red;
+  border-radius: 1rem;
+  color: wheat;
+  font-weight: bold;
 }

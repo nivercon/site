@@ -64,10 +64,10 @@
           const order = data.sort((a, b) => parseFloat(b.pulls) - parseFloat(a.pulls));
           const mappedUsers = order.map((user, index) => {
             return `
-              <li class="ranking__list">
+              <li class="ranking__profile">
                 <img src=${user.avatar}/>
-                <p>${user.username}</p>
-                <p>${user.pulls}</p>
+                <p><b>${user.username}</b></p>
+                <p class="ranking__badget">${user.pulls}</p>
               </li>
             `
           })
